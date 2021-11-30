@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+  <div>
+        <div>
+          <h1 style="text-align: center; color:white; background:  #2CBBBB">Book Management</h1>
+        </div>
+
+        <div><button class="button col-lg-2" type="button" style="  -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+          -webkit-box-shadow: inset 0px 1px 0px 0px #0dc4c4;
+          box-shadow: inset 0px 1px 0px 0px #45D6D6;
+          background-color: #2CBBBB;
+          border: 1px solid #27A0A0;
+          display: inline-block;
+          cursor: pointer;
+          color: #FFFFFF;
+          font-family: 'Open Sans Condensed', sans-serif;
+          font-size: 14px;
+          padding: 8px 18px;
+          text-decoration: none;
+          text-transform: uppercase;">Add Book</button></div><br>
+        <div>
+          <input id="searchBar" class="form-control mr-sm-2" type="text" placeholder="Search" onkeyup="myFunction1()" aria-label="Search">
+          <div class="input-group-append">
+            <select class="custom-select" id="categoryselected">
+              <option selected value="1">By Book</option>
+              <option selected value="2">By Author</option>
+            </select>
+            <button id="searchbtn" class="btn btn-outline-secondary ml-1" onclick="myFunction1()" type="button">Search</button>
+          </div>
+        </div>  
+        <div>
+          <button onclick="SortByName()">Book NAme</button>
+          <button onclick="SortByPrice()">Price</button>
+        </div>
+        
+        </table></div>
+        <div class="modal modal1 hidden">
+             <form id="form1">
+              <input type="text" class="bookField" id="book-name" placeholder="Book Name" />
+              <input type="text" class="authorField" id="author" placeholder="Author" />
+              <input type="text" id="price" placeholder="Price" />
+              <input type="text" id="Quantaty" placeholder="Quantaty" />
+              <input type="text" id="available" placeholder="Available" />     
+            </form>
+            <input type="submit" style="  -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+            -webkit-box-shadow: inset 0px 1px 0px 0px #0dc4c4;
+            box-shadow: inset 0px 1px 0px 0px #45D6D6;
+            background-color: #2CBBBB;
+            border: 1px solid #27A0A0;
+            display: inline-block;
+            cursor: pointer;
+            color: #FFFFFF;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 14px;
+            padding: 8px 18px;
+            text-decoration: none;
+            text-transform: uppercase;" class="submit" onclick="manageData()" >
+        </div>
+        
+        <div class="modal modal2 hidden">
+        </div>
+
+
+     
+        <div><table class="table " >
+            <thead>
+                 <tr>
+                   <th>Sr no.</th>
+                 <th>Book</th>
+                 <th>Author</th>
+                 <th>Price</th>
+                 <th>Quantaty</th>
+                 <th>Available</th>
+                 <th>Action</th>
+                 </tr>
+             </thead>
+             <tbody id="tbody">
+ 
+             </tbody>
+
+        
+        <div class="overlay hidden"></div>
+      </div>
+<script src="js.js"></script>
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<input 
+  type="text" 
+  id="myInput" 
+  onkeyup="myFunction()" 
+  placeholder="Search for names or countries.." 
+  title="Type in a name or a country">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Italy</td>
+  </tr>
+  <tr>
+    <td>North/South</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Paris specialites</td>
+    <td>France</td>
+  </tr>
+</table>
+
+<script>
+  function myFunction() {
+    const trs = document.querySelectorAll('#myTable tr:not(.header)')
+    const filter = document.querySelector('#myInput').value
+    const regex = new RegExp(filter, 'i')
+    const isFoundInTds = td => regex.test(td.innerHTML)
+    const isFound = childrenArr => childrenArr.some(isFoundInTds)
+    const setTrStyleDisplay = ({ style, children }) => {
+      style.display = isFound([
+        ...children // <-- All columns
+      ]) ? '' : 'none' 
+    }
+    
+    trs.forEach(setTrStyleDisplay)
+  }
+  </script> -->
