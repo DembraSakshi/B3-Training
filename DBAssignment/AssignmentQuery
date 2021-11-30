@@ -1,0 +1,134 @@
+-- Database: CRM
+
+-- DROP DATABASE "CRM";
+
+CREATE DATABASE "CRM"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+	
+	
+--- Query to get a list of all leads
+select * from leads;
+
+
+--- Query to get all lead which converted to Opportunity
+select * from leads left join opportunity on leads.lead_id = opportunity.lead_id;
+--- select * from opportunity left join leads on leads.lead_id = opportunity.lead_id; --- it laso working
+--- select * from opportunity ---(cause only insterested are converted so we only have convterd values)
+--- select * from leads where is_interested = true; ---(only true gets convetred so it also give same result)
+
+
+--- Query to get all lead which converted to Account
+select * from leads left join opportunity on leads.lead_id = opportunity.lead_id left join account on opportunity.opportunity_id = account.opportunity_id;
+--- select * from account left join apportunity on opportunity.opportunity_id = account.opportunity_id left join leads on leads.lead_id = opportunity.lead_id;
+
+
+--- Query to get All contacts of an Account
+---create view acc_contact as
+/*select users.contact_no_1,account.account_id from account,users
+left join leads on leads.user_id = users.user_id
+left join opportunity on leads.lead_id = opportunity.lead_id
+left join account on opportunity.opportunity_id = account.opportunity_id;*/  --- not working
+create view acc_contact as
+select contact_no_1 from users,account,leads,opportunity
+where leads.user_id = users.user_id and 
+leads.lead_id = opportunity.lead_id and 
+opportunity.opportunity_id = account.opportunity_id;
+
+select * from acc_contact;
+
+
+
+--- Query to get the count of task Module wise
+select count(lead_id) as lead_task,count(opportunity_id) as opportunity_task,count(account_id) as account_task from tasks;
+
+
+
+--- Query to get All task of Leads,Opportunity, Account
+select task_id,task_name,assigned_date,due_date,status,lead_id from tasks
+where lead_id is not null;
+
+select task_id,task_name,assigned_date,due_date,status,opportunity_id from tasks
+where opportunity_id is not null;
+
+select task_id,task_name,assigned_date,due_date,status,account_id from tasks
+where account_id is not null;
+
+
+
+--- Query to get all accounts that do not have 
+select * from account
+left join opportunity on account.opportunity_id = opportunity.opportunity_id
+left join leads on opportunity.lead_id = leads.lead_id
+left join users on leads.user_id = users.user_id
+where users.contact_no_1 = null;
+
+
+
+--- Query to get all task which is not created today.
+select * from tasks
+where assigned_date > current_date;
+
+
+
+--- Query to get all the task which completed
+create view completed_task as
+select * from tasks
+where status = 'completed';
+select * from completed_task;
+
+
+
+--- Query to get all upcoming tasks
+create view future_task as
+select * from tasks
+where assigned_date > current_date;
+select * from future_task;
+
+
+
+--- Query to fetch account and its contacts with account id, account name
+select account_id,account_name from account
+left join opportunity on account.opportunity_id = opportunity.opportunity_id
+left join leads on opportunity.lead_id = leads.lead_id
+left join users on leads.user_id = users.user_id
+where users.contact_no_1 is not null;
+-- if want to print contact use where claus istead of joins
+select account.account_id,account.account_name,users.contact_no_1 from account,users,opportunity,leads
+where account.opportunity_id = opportunity.opportunity_id and 
+opportunity.lead_id = leads.lead_id and 
+leads.user_id = users.user_id; 
+
+
+
+--- Query to get the count of leads which is converted to account
+select count(*) from leads 
+left join opportunity on leads.lead_id = opportunity.lead_id 
+left join account on opportunity.opportunity_id = account.opportunity_id
+where account.account_id is not null;
+
+
+---- Query to get all Opportunity
+create view opp as
+select * from opportunity;
+select * from opp;
+
+
+
+---- Query to get all Opportunity which converted to Account
+select * from opportunity
+left join account on account.opportunity_id = opportunity.opportunity_id;
+
+
+
+--- Query to get count which plan is taken how many times
+create view plan_count as
+select plan.planname,count(account_plan.ap_id) from account_plan,plan 
+where plan.plan_id = account_plan.plan_id 
+group by plan.planname;
+select * from plan_count;

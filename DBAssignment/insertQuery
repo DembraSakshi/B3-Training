@@ -1,0 +1,449 @@
+-- Database: CRM
+
+-- DROP DATABASE "CRM";
+
+CREATE DATABASE "CRM"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+	
+	
+	
+	----------- insert into Country --------
+insert into country (country_id, country_name) values (1, 'Indonesia');
+insert into country (country_id, country_name) values (2, 'India');
+insert into country (country_id, country_name) values (3, 'Mexico');
+insert into country (country_id, country_name) values (4, 'Botswana');
+insert into country (country_id, country_name) values (5, 'Poland');
+
+select * from country;
+
+
+
+	----------- insert into Address --------
+insert into address values(1,'aceh',1),(2,'bali',1),(3,'banten',1),(4,'bengkulu',1),(5,'Gorontalo',1),(6,'Jambi',1),(7,'Lampung',1),(8,	'Maluku',1),(9,'Papua',1),(10,'Riau',1);
+insert into address(address_id, state, country_id ) values (11, 'Maharashtra', 2);
+insert into address(address_id, state, country_id ) values (12, 'Rajasthan', 2);
+insert into address(address_id, state, country_id ) values (13, 'Punjab', 2);
+insert into address(address_id, state, country_id ) values (14, 'Goa', 2);
+insert into address(address_id, state, country_id ) values (15, 'Karnatala', 2);
+insert into address(address_id, state, country_id ) values (16, 'Kerala', 2);
+insert into address(address_id, state, country_id ) values (17, 'Odisha', 2);
+insert into address(address_id, state, country_id ) values (18, 'Nagland', 2);
+insert into address(address_id, state, country_id ) values (19, 'Assam', 2);
+insert into address(address_id, state, country_id ) values (20, 'Haryana', 2);
+insert into address(address_id, state, country_id ) values (21, 'Aguascalientes', 3);
+insert into address(address_id, state, country_id ) values (22, 'Baja California', 3);
+insert into address(address_id, state, country_id ) values (23, 'Campeche', 3);
+insert into address(address_id, state, country_id ) values (24, 'Durango', 3);
+insert into address(address_id, state, country_id ) values (25, 'Guerrero', 3);
+insert into address(address_id, state, country_id ) values (26, 'Hidalgo', 3);
+insert into address(address_id, state, country_id ) values (27, 'Jalisco', 3);
+insert into address(address_id, state, country_id ) values (28, 'Nayarit', 3);
+insert into address(address_id, state, country_id ) values (29, 'Morelos', 3);
+insert into address(address_id, state, country_id ) values (30, 'Sinaloa', 3);
+insert into address(address_id, state, country_id ) values (31, 'Gaborone', 4);
+insert into address(address_id, state, country_id ) values (32, 'Francistown', 4);
+insert into address(address_id, state, country_id ) values (33, 'Molepolole', 4);
+insert into address(address_id, state, country_id ) values (34, 'Serowe', 4);
+insert into address(address_id, state, country_id ) values (35, 'Maun', 4);
+insert into address(address_id, state, country_id ) values (36, 'Selibe Phikwe', 4);
+insert into address(address_id, state, country_id ) values (37, 'Kanye', 4);
+insert into address(address_id, state, country_id ) values (38, 'Mahalapye', 4);
+insert into address(address_id, state, country_id ) values (39, 'Tonota', 4);
+insert into address(address_id, state, country_id ) values (40, 'Orapa', 4);
+insert into address(address_id, state, country_id ) values (41, 'Greater Poland', 5);
+insert into address(address_id, state, country_id ) values (42, 'Kuyavian Pomeranian', 5);
+insert into address(address_id, state, country_id ) values (43, 'Lodz', 5);
+insert into address(address_id, state, country_id ) values (44, 'Lublin', 5);
+insert into address(address_id, state, country_id ) values (45, 'Opole', 5);
+insert into address values(46,'Silesia',5),(47,'Lubusz',5),(48,'Masovia',5),(49,'Subcarpathia',5),(50,'Podlaskie',5);
+
+select * from address;
+
+
+
+	----------- insert into User --------
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (1, 'Anni', 'Rodriguez', 'arodriguez0@wikispaces.com', '8988', 'F', '10/15/2021', '7 Northridge Junction', '29 Clyde Gallagher Hill', '9733714681', '5159931507', '8/2/2021', false, 1);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (2, 'Giustino', 'Gosnoll', 'ggosnoll1@opera.com', '80699', 'M', '10/16/2021', '1188 Packers Court', '81 Welch Road', '9812599049', '1551766007', '6/15/2021', false, 20);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (3, 'Garvin', 'Border', 'gborder2@umich.edu', '857', 'M', '4/17/2021', '8819 Southridge Center', '6 Summit Place', '2027239975', '2218352629', '12/8/2020', false, 3);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (4, 'Cobb', 'Gooderson', 'cgooderson3@dropbox.com', '88', 'M', '9/30/2021', '6203 6th Center', '46528 Birchwood Place', '1895105470', '1362169081', '10/1/2021', false, 4);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (5, 'Kerk', 'Hallgarth', 'khallgarth4@sina.com.cn', '084', 'M', '1/11/2021', '66199 Northview Parkway', '5 Sutteridge Alley', '3731719407', '8591896942', '2/7/2021', false, 5);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (6, 'Mark', 'Stendell', 'dstendell5@people.com.cn', '9596', 'M', '12/8/2020', '569 Blaine Court', '2 8th Crossing', '1968559727', '5379755319', '11/27/2020', false, 6);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (7, 'Paxton', 'Nisco', 'pnisco6@360.cn', '5753', 'M', '4/30/2021', '19 Maryland Park', '44 Fallview Center', '3234913573', '6372200562', '2/24/2021', false, 7);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (8, 'Patrice', 'Ferguson', 'pferguson7@studiopress.com', '798', 'F', '8/23/2021', '84571 Kinsman Way', '316 Pawling Avenue', '2921251575', '5649325305', '8/1/2021', false, 8);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (9, 'Bettina', 'Rapelli', 'brapelli8@spiegel.de', '505', 'F', '8/7/2021', '0594 Stang Pass', '78001 Claremont Plaza', '2326624163', '6277309155', '9/19/2021', false, 9);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (10, 'Alistair', 'Steanyng', 'asteanyng9@delicious.com', '971', 'M', '2/7/2021', '6394 Novick Court', '398 Dunning Road', '4198961918', '4453346326', '6/14/2021', false, 10);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (11, 'Alex', 'Nana', 'lnanaa@blogtalkradio.com', '4282', 'F', '12/19/2020', '15899 Declaration Park', '851 Main Park', '2833057840', '2857060462', '3/25/2021', false, 11);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (12, 'Tony', 'Copnar', 'tcopnarb@reverbnation.com', '8', 'M', '11/15/2021', '8 Johnson Street', '2676 Duke Plaza', '9102549816', '8684215353', '2/16/2021', false, 12);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (13, 'Warren', 'Hince', 'whincec@unblog.fr', '373', 'M', '1/24/2021', '9773 Everett Street', '819 Kropf Pass', '5255293283', '9307222559', '12/1/2020', false, 13);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (14, 'Sal', 'Batha', 'sbathad@yale.edu', '5176', 'F', '8/19/2021', '56 Superior Crossing', '2139 Monica Road', '6687588377', '8683540360', '6/6/2021', true, 14);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (15, 'Rufus', 'Sandbatch', 'rsandbatche@meetup.com', '5', 'M', '3/31/2021', '0 Birchwood Pass', '56 Fisk Terrace', '6108407962', '5336806700', '4/24/2021', true, 15);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (16, 'Phillipp', 'Cleevely', 'pcleevelyf@wix.com', '81', 'M', '10/27/2021', '91760 Fair Oaks Road', '983 Ronald Regan Trail', '2987939888', '5544025893', '4/21/2021', false, 16);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (17, 'Menard', 'Werlock', 'mwerlockg@theglobeandmail.com', '7543', 'M', '9/8/2021', '83313 Clarendon Center', '60723 Amoth Pass', '4344395656', '8584031163', '1/7/2021', true, 17);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (18, 'Doro', 'Pfeffel', 'dpfeffelh@wsj.com', '46', 'F', '5/13/2021', '32 Saint Paul Avenue', '9374 Weeping Birch Crossing', '9732015588', '8774094374', '2/24/2021', false, 18);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (19, 'Herbie', 'Radage', 'hradagei@amazon.de', '33', 'M', '7/14/2021', '1 Dryden Alley', '54490 Esch Terrace', '7474826836', '2454480123', '10/17/2021', false, 19);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (20, 'Happy', 'Ioannou', 'hioannouj@howstuffworks.com', '4522', 'F', '12/1/2020', '3784 Reindahl Trail', '3 Sherman Drive', '3012609855', '9259703511', '7/27/2021', false, 20);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (21, 'Shaw', 'Caudrelier', 'scaudrelierk@clickbank.net', '07339', 'M', '9/28/2021', '8 Burrows Trail', '5 Hovde Point', '5191783292', '8122950655', '8/23/2021', true, 21);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (22, 'Aguste', 'Sidsaff', 'asidsaffl@bloglines.com', '55', 'M', '2/22/2021', '9 Orin Circle', '6 Center Crossing', '3547449439', '5792419478', '11/3/2021', false, 22);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (23, 'Joey', 'Gedling', 'jgedlingm@newyorker.com', '30', 'M', '2/10/2021', '3650 Packers Pass', '06 Susan Street', '3028139008', '8093622873', '10/8/2021', false, 23);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (24, 'Cilka', 'Apdell', 'capdelln@rediff.com', '9238', 'F', '10/21/2021', '773 Jay Trail', '12 Old Shore Place', '6534809365', '4693383388', '12/16/2020', true, 24);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (25, 'Torey', 'Swinnard', 'tswinnardo@soup.io', '32', 'F', '6/2/2021', '7 Pearson Lane', '48304 Ridgeway Circle', '7193477957', '3095891140', '9/3/2021', true, 25);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (26, 'Yohan', 'Tett', 'rtettp@webeden.co.uk', '51', 'F', '3/27/2021', '95060 Merchant Crossing', '1145 Monica Drive', '2132035584', '8646110958', '6/23/2021', false, 26);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (27, 'Nikos', 'Struan', 'nstruanq@vk.com', '58', 'M', '7/15/2021', '4 Oak Valley Crossing', '14346 Darwin Trail', '2993406597', '5727077342', '12/23/2020', true, 27);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (28, 'Shalne', 'Kislingbury', 'skislingburyr@is.gd', '4138', 'F', '3/9/2021', '0601 Marquette Terrace', '12 Duke Plaza', '6921308809', '1109726692', '2/23/2021', false, 28);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (29, 'Bobbie', 'Doust', 'bdousts@sfgate.com', '1', 'M', '7/23/2021', '0 Service Point', '3 Carioca Street', '4818651716', '4078787362', '12/24/2020', false, 29);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (30, 'Beau', 'Matias', 'bmatiast@reuters.com', '7051', 'M', '4/30/2021', '431 American Ash Hill', '8 Buhler Way', '8328670878', '9677668715', '10/5/2021', false, 30);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (31, 'Boothe', 'Piechnik', 'bpiechniku@wix.com', '68', 'M', '11/2/2021', '74 Ridge Oak Trail', '45903 Goodland Avenue', '3022927423', '9936561854', '3/7/2021', false, 31);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (32, 'katy', 'Handrahan', 'bhandrahanv@cloudflare.com', '7894', 'F', '8/21/2021', '5 Vahlen Crossing', '56124 Sheridan Alley', '5957858990', '2117151886', '3/25/2021', false, 32);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (33, 'Sanders', 'De Cleyne', 'sdecleynew@histats.com', '069', 'M', '6/11/2021', '30477 Lotheville Trail', '3 Fordem Terrace', '2463483101', '7249006174', '11/30/2020', false, 33);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (34, 'Web', 'Buntin', 'wbuntinx@barnesandnoble.com', '2', 'M', '9/9/2021', '75487 Warner Crossing', '9795 Cambridge Drive', '2416955569', '1908326246', '5/22/2021', false, 34);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (35, 'Ned', 'Letterese', 'nletteresey@whitehouse.gov', '4598', 'M', '3/11/2021', '93 Eastlawn Drive', '019 Lawn Road', '8606524078', '7662527560', '2/12/2021', false, 35);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (36, 'Janith', 'Hubbucke', 'jhubbuckez@ucoz.com', '066', 'F', '1/27/2021', '1388 Michigan Junction', '8349 Nevada Crossing', '7555952852', '2283994540', '12/29/2020', false, 36);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (37, 'Theodosia', 'Chessor', 'tchessor10@tiny.cc', '6', 'F', '9/9/2021', '176 Huxley Park', '49 Starling Parkway', '9379576397', '2514433516', '12/8/2020', false, 37);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (38, 'Ariel', 'Sinclar', 'asinclar11@scribd.com', '171', 'F', '9/26/2021', '54 Becker Avenue', '50 Reinke Alley', '9361562128', '6597514353', '6/1/2021', false, 38);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (39, 'Delmer', 'Dikels', 'ddikels12@spotify.com', '851', 'M', '8/10/2021', '8 Park Meadow Parkway', '31 International Street', '3743150603', '8739707377', '9/5/2021', false, 39);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (40, 'Ossie', 'Enriques', 'oenriques13@mashable.com', '9733', 'M', '12/21/2020', '35 Mallory Hill', '618 Schmedeman Hill', '7177312321', '3031422493', '11/8/2021', true, 40);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (41, 'Florri', 'Lorand', 'florand14@ted.com', '860', 'F', '9/8/2021', '668 Butterfield Crossing', '1082 Bunting Way', '6799724762', '5791127876', '4/4/2021', false, 41);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (42, 'Aarya', 'Burditt', 'gburditt15@icq.com', '73426', 'F', '10/6/2021', '370 Rigney Pass', '6 Corscot Hill', '2411290782', '8784120017', '5/5/2021', false, 42);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (43, 'Kaja', 'Jeremaes', 'kjeremaes16@wikipedia.org', '8745', 'F', '10/22/2021', '651 Becker Junction', '687 Brentwood Parkway', '7068836865', '3418663790', '8/10/2021', false, 43);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (44, 'Chandal', 'Blenkensop', 'cblenkensop17@utexas.edu', '3604', 'F', '9/23/2021', '47335 Karstens Point', '24 Rusk Plaza', '7997040844', '3538688363', '5/19/2021', false, 44);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (45, 'Miguel', 'Glasman', 'mglasman18@home.pl', '2737', 'M', '1/13/2021', '3 Moland Alley', '75 Tony Center', '6069706330', '8618841462', '6/24/2021', true, 45);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (46, 'Gwyn', 'Hanhart', 'ghanhart19@irs.gov', '2947', 'F', '4/20/2021', '12 Vahlen Point', '87 Maple Wood Hill', '9007775150', '9375864503', '4/18/2021', false, 46);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (47, 'Abby', 'Halse', 'ahalse1a@ucla.edu', '484', 'M', '4/10/2021', '244 Northview Crossing', '2 Coolidge Trail', '2198339422', '6066071475', '3/7/2021', true, 47);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (48, 'Rochester', 'Bridal', 'rbridal1b@is.gd', '3', 'M', '6/18/2021', '667 Fairview Pass', '908 Pennsylvania Alley', '7674727309', '8063364418', '5/18/2021', true, 48);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (49, 'Tyrone', 'Yekel', 'tyekel1c@wordpress.com', '5728', 'M', '1/26/2021', '718 Roxbury Lane', '4 Barnett Road', '9833012613', '5996459727', '8/19/2021', false, 49);
+insert into users (user_id, first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, contact_no_2, created_at, is_deleted, address_id) values (50, 'Chrissie', 'Colerick', 'ccolerick1d@bandcamp.com', '538', 'F', '11/3/2021', '37789 Rockefeller Trail', '749 Kings Circle', '5216447483', '1481856607', '11/5/2021', true, 50);
+alter table users add roles varchar(50) not null default('customer');
+
+insert into users (user_id ,first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, created_at, is_deleted, address_id, roles) values (51,'Shubh', 'Todmal', 'shubhamT@bandcamp.com', '539', 'M', '11/3/2021', '37789 Rockefeller Trail', '749 Kings Circle', '5216447482', '11/5/2021', true, 50, 'employee');
+insert into users (user_id ,first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, created_at, is_deleted, address_id, roles) values (52,'Mayuri', 'Fone', 'MF@bandcamp.com', '540', 'F', '11/3/2021', '37789 Rockefeller Trail', '749 Kings Circle', '5216447484', '11/5/2021', true, 50, 'employee');
+insert into users (user_id ,first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, created_at, is_deleted, address_id, roles) values (53,'Komal', 'Mulik', 'KM@bandcamp.com', '541', 'F', '11/3/2021', '37789 Rockefeller Trail', '749 Kings Circle', '5216447485', '11/5/2021', true, 50, 'employee');
+insert into users (user_id ,first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, created_at, is_deleted, address_id, roles) values (54,'Sakshi', 'Debra', 'SD@bandcamp.com', '542', 'F', '11/3/2021', '37789 Rockefeller Trail', '749 Kings Circle', '5216447486', '11/5/2021', true, 50, 'employee');
+insert into users (user_id ,first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, created_at, is_deleted, address_id, roles) values (55,'Rohan', 'Kakde', 'RK@bandcamp.com', '543', 'M', '11/3/2021', '37789 Rockefeller Trail', '749 Kings Circle', '5216447487', '11/5/2021', true, 50, 'employee');
+insert into users (user_id ,first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, created_at, is_deleted, address_id, roles) values (56,'Ritesh', 'Rana', 'RR@bandcamp.com', '544', 'M', '11/3/2021', '37789 Rockefeller Trail', '749 Kings Circle', '5216447488', '11/5/2021', true, 50, 'employee');
+insert into users (user_id ,first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, created_at, is_deleted, address_id, roles) values (57,'Shree', 'Walke', 'SW@bandcamp.com', '545', 'M', '11/3/2021', '37789 Rockefeller Trail', '749 Kings Circle', '5216447489', '11/5/2021', true, 50, 'employee');
+insert into users (user_id ,first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, created_at, is_deleted, address_id, roles) values (58,'Gayatri', 'Kardile', 'GK@bandcamp.com', '546', 'F', '11/3/2021', '37789 Rockefeller Trail', '749 Kings Circle', '5216447490', '11/5/2021', true, 50, 'employee');
+insert into users (user_id ,first_name, last_name, email, reg_number, gender, date_of_birth, Address_line_1, Address_line_2, contact_no_1, created_at, is_deleted, address_id, roles) values (59,'Laxya', 'Bhalerao', 'LB@bandcamp.com', '547', 'M', '11/3/2021', '37789 Rockefeller Trail', '749 Kings Circle', '5216447491', '11/5/2021', true, 50, 'employee');
+
+---alter table add is_interested boolean not null;
+---update users set is_interested = true where user_id in (3, 1, 5, 7, 9, 10, 11, 13, 14, 15, 16,18,20,25,26,27,28,29,30,31,33,35,36,39,40,45,48,49,50,47);
+---Alter table users drop column is_interested;
+
+select * from users;
+
+
+----------- insert into employees --------
+insert into employees(designation,date_of_join,user_id) values('project_trainee','8/5/2022',(select user_id from users where roles = 'employee' and user_id = 51));
+insert into employees(designation,date_of_join,user_id) values('project_trainee','8/5/2022',(select user_id from users where roles = 'employee' and user_id = 52));
+insert into employees(designation,date_of_join,user_id) values('project_trainee','8/5/2022',(select user_id from users where roles = 'employee' and user_id = 53));
+insert into employees(designation,date_of_join,user_id) values('project_trainee','8/5/2022',(select user_id from users where roles = 'employee' and user_id = 54));
+insert into employees(designation,date_of_join,user_id) values('project_trainee','8/5/2022',(select user_id from users where roles = 'employee' and user_id = 55));
+insert into employees(designation,date_of_join,user_id) values('project_trainee','8/5/2022',(select user_id from users where roles = 'employee' and user_id = 56));
+insert into employees(designation,date_of_join,user_id) values('project_trainee','8/5/2022',(select user_id from users where roles = 'employee' and user_id = 57));
+insert into employees(designation,date_of_join,user_id) values('project_trainee','8/5/2022',(select user_id from users where roles = 'employee' and user_id = 58));
+insert into employees(designation,date_of_join,user_id) values('project_trainee','8/5/2022',(select user_id from users where roles = 'employee' and user_id = 59));
+select * from employees;
+
+
+
+	----------- insert into plan --------
+INSERT INTO plan(planname,plan_validity,plan_price)
+VALUES  ('300mbps',30,1000),('300mbps',90,3000),('300mbps',360,6000),
+		('30mbps',30,500),('30mbps',90,1000),('30mbps',360,2000),
+		('10mbps',30,100),('10mbps',90,500),('10mbps',360,1000),
+		('5mbps',30,500),('5mbps',90,100),('5mbps',360,500);
+select * from plan order by plan_id;
+		
+
+
+
+	----------- insert into lead --------
+
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('deviantart.com', '7/15/2021', false, true, 1);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('soundcloud.com', '8/10/2021', false, false, 2);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('pagesperso-orange.fr', '12/29/2020', true, false, 3);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('nasa.gov', '8/23/2021', false, true, 4);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('exblog.jp', '4/16/2021', false, true, 5);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('salon.com', '11/22/2021', false, true, 6);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('mysql.com', '5/14/2021', false, false, 7);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('microsoft.com', '3/22/2021', false, true, 8);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('google.ru', '3/10/2021', false, true, 9);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('businessweek.com', '4/27/2021', false, false, 10);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('archive.org', '5/14/2021', false, true, 11);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('symantec.com', '3/24/2021', false, true, 12);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('google.com.hk', '8/12/2021', false, true, 13);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('google.de', '10/24/2021', false, true, 14);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('altervista.org', '4/29/2021', false, false, 15);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('twitter.com', '12/29/2020', false, true, 16);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('comcast.net', '11/7/2021', false, true, 17);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('theatlantic.com', '11/1/2021', false, true, 18);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('dailymail.co.uk', '6/12/2021', false, true, 19);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('hibu.com', '9/3/2021', true, true, 20);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('ibm.com', '4/24/2021', false, true, 21);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('yellowpages.com', '6/27/2021', false, false, 22);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('com.com', '12/20/2020', false, true, 23);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('yolasite.com', '8/9/2021', false, true, 24);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('zimbio.com', '11/24/2021', false, true, 25);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('php.net', '10/29/2021', false, true, 26);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('livejournal.com', '12/20/2020', false, true, 27);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('google.co.uk', '9/21/2021', false, false, 28);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('ox.ac.uk', '8/8/2021', false, true, 29);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('pen.io', '8/30/2021', false, true, 30);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('japanpost.jp', '4/13/2021', false, true, 31);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('printfriendly.com', '3/31/2021', false, true, 32);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('irs.gov', '5/25/2021', false, true, 33);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('comcast.net', '5/9/2021', false, true, 34);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('last.fm', '1/14/2021', false, false, 35);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('cmu.edu', '5/19/2021', false, true, 36);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('addthis.com', '1/1/2021', false, true, 37);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('surveymonkey.com', '5/10/2021', false, true, 38);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('technorati.com', '2/10/2021', false, true, 39);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('cnet.com', '3/5/2021', false, true, 40);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('tuttocitta.it', '4/16/2021', false, true, 41);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('paypal.com', '2/4/2021', false, true, 42);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('marketwatch.com', '12/17/2020', false, true, 43);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('live.com', '8/29/2021', false, true, 44);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('usa.gov', '7/31/2021', false, true, 45);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('yellowpages.com', '8/12/2021', false, true, 46);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('deliciousdays.com', '6/3/2021', false, true, 47);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('joomla.org', '12/13/2020', false, true, 48);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('livejournal.com', '11/28/2020', false, true, 49);
+insert into leads (referral, created_at, is_deleted, is_interested, user_id) values ('qq.com', '3/17/2021', false, true, 50);
+
+---delete from leads where lead_id = 7;
+select * from leads;
+
+
+-----------------     convert into opportunity --------------
+
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.', '3/4/2021', false, true,(select lead_id from leads where is_interested = true and lead_id =19));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', '5/3/2021', false, true,(select lead_id from leads where is_interested = true and lead_id =20));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', '1/18/2021', false, true,(select lead_id from leads where is_interested = true and lead_id =21 ));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', '12/21/2020', false, true,(select lead_id from leads where is_interested = true and lead_id =22 ));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Phasellus in felis. Donec semper sapien a libero. Nam dui.', '6/3/2021', false, false,(select lead_id from leads where is_interested = true and lead_id = 23));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', '3/21/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 24));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', '4/3/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 25));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Sed ante. Vivamus tortor. Duis mattis egestas metus.', '4/26/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 26));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', '11/8/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 27));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '6/1/2021', false, false,(select lead_id from leads where is_interested = true and lead_id = 28));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', '5/5/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 29));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', '12/25/2020', false, true,(select lead_id from leads where is_interested = true and lead_id =30 ));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', '12/28/2020', false, true,(select lead_id from leads where is_interested = true and lead_id = 31));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', '5/25/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 32));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', '2/20/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 33));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '10/25/2021', false, false,(select lead_id from leads where is_interested = true and lead_id = 34));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', '5/6/2021', false, false,(select lead_id from leads where is_interested = true and lead_id = 35));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', '5/11/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 36));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', '12/9/2020', false, true,(select lead_id from leads where is_interested = true and lead_id = 37));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', '8/3/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 38));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Phasellus in felis. Donec semper sapien a libero. Nam dui.', '5/9/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 39));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', '9/6/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 40));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', '3/1/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 41));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Sed ante. Vivamus tortor. Duis mattis egestas metus.', '3/21/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 42));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', '12/7/2020', false, true,(select lead_id from leads where is_interested = true and lead_id = 43));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', '1/19/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 44));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '1/26/2021', false, false,(select lead_id from leads where is_interested = true and lead_id =45 ));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', '3/9/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 46));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', '7/16/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 47));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', '4/14/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 48));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', '9/12/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 49));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', '2/28/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 50));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', '3/28/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 51));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', '9/21/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 52));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', '1/31/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 53));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', '1/27/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 54));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', '2/10/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 55));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '10/14/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 56));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', '10/7/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 57));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', '8/11/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 58));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', '1/10/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 59));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', '10/6/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 60));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', '10/27/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 61));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', '4/5/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 62));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', '6/10/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 63));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', '10/27/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 64));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', '11/12/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 65));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', '7/25/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 66));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', '5/16/2021', false, false,(select lead_id from leads where is_interested = true and lead_id = 67));
+insert into opportunity (description, created_at, is_deleted, is_interested,lead_id) values ('Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', '7/12/2021', false, true,(select lead_id from leads where is_interested = true and lead_id = 68));
+
+select * from opportunity;
+
+
+
+-------------   convetring to Account --------------------
+
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('sinkpen0', '4/25/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =4));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('msayers1', '8/15/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =8));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('ikernell2', '6/9/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =9));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('jtireman3', '9/7/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =10));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('mdomb4', '4/16/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =12));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('ajoynt5', '10/29/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =13));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('twallwood6', '3/3/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =15));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('dloges7', '7/30/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =16));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('kkilgallon8', '8/9/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =20));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('cogilvy9', '8/12/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =22));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('lscougha', '9/5/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =24));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('khewinsb', '7/12/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =25));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('llightbownec', '7/28/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =26));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('dbestimand', '12/4/2020', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =27));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('hchetwynde', '8/6/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =31));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('sprimmerf', '11/22/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =32));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('ipenag', '11/13/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =44));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('icundicth', '1/7/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =45));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('mhaythi', '11/6/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =46));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('gstaytej', '10/2/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =47));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('sdewildek', '6/10/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =48));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('fmicheul', '1/9/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =50));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('mluffm', '7/17/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =51));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('vbaudtsn', '1/4/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =52));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('alorkinso', '7/10/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =53));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('tgoodrichp', '3/5/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =56));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('dstreetenq', '8/18/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =57));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('hramasr', '7/24/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =59));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('kstennetts', '1/6/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =62));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('hplayfoott', '12/4/2020', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =63));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('kjelkesu', '5/22/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =64));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('jtootalv', '3/27/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =66));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('lcastanonew', '8/23/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =67));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('bhallowesx', '11/27/2020', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =70));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('pdeangelisy', '10/13/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =72));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('norrz', '4/10/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =73));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('tpeile10', '6/21/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =74));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('squenby11', '9/18/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =75));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('amortel12', '7/6/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =76));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('mglisane13', '8/26/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =77));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('bhawarden14', '5/29/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =78));
+insert into account (account_Name, created_at, is_deleted, opportunity_id) values ('ktemporal15', '2/26/2021', false, (select opportunity_id from opportunity where is_interested = true and opportunity_id =79));
+	
+	
+	select * from account;
+	
+------------   Add data in account_plan --------------------
+
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (1, '2/17/2021', '3/16/2020', 1, 1);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (2, '11/21/2021', '1/20/2022', 2, 2);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (3, '5/14/2021', '5/14/2022', 1, 3);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (4, '5/7/2021', '6/6/2021', 4, 4);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (5, '11/7/2021', '2/6/2021', 5, 5);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (6, '10/12/2021', '10/11/2022', 6, 6);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (7, '7/9/2021', '8/8/2021', 7, 7);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (8, '7/7/2021', '10/6/2021', 8, 8);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (9, '1/29/2021', '1/29/2022', 9, 9);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (10, '1/26/2021', '2/25/2021', 1, 10);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (11, '1/18/2021', '4/17/2021', 2, 11);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (12, '11/1/2021', '11/1/2022', 4, 12);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (13, '2/21/2021', '3/20/2021', 13, 1);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (14, '8/21/2021', '9/20/2021', 14, 4);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (15, '10/11/2021', '1/10/2022', 15, 5);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (16, '12/12/2020', '12/11/2022', 16, 6);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (17, '1/14/2021', '2/14/2021', 17, 7);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (18, '5/30/2021', '8/29/2021', 18, 8);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (19, '6/12/2021', '6/11/2022', 14, 9);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (20, '9/12/2021', '12/12/2021', 13, 2);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (21, '1/10/2021', '4/9/2021', 23, 2);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (22, '8/4/2021', '11/3/2021', 18, 2);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (23, '1/15/2021', '1/14/2022', 23, 3);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (24, '11/28/2020', '12/27/2021', 2, 4);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (25, '12/4/2020', '3/3/2021', 25, 5);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (26, '3/31/2021', '3/30/2022', 26, 6);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (27, '12/22/2020', '1/21/2021', 27, 7);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (28, '4/21/2021', '7/20/2021', 28, 8);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (29, '5/28/2021', '5/27/2022', 16, 9);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (30, '7/27/2021', '8/26/2021', 15, 10);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (31, '11/22/2021', '2/21/2022', 9, 11);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (32, '8/27/2021', '8/26/2022', 28, 12);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (33, '11/17/2021', '11/16/2022', 33, 12);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (34, '9/12/2021', '12/11/2021', 34, 11);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (35, '2/11/2021', '2/10/2022', 35, 3);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (36, '10/18/2021', '10/17/2022', 36, 6);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (37, '7/1/2021', '9/30/2021', 37, 11);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (38, '12/14/2020', '12/13/2021', 4, 12);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (39, '5/10/2021', '6/9/2021', 1, 4);
+insert into account_plan (ap_id, start_date, due_date, account_id, plan_id) values (40, '8/16/2021', '9/15/2021', 27, 4);
+
+select * from account_plan;
+
+
+
+---------- insert into employee_account  ---------
+
+insert into employee_account (emp_id, account_id) values (1, 1);
+insert into employee_account (emp_id, account_id) values (2, 2);
+insert into employee_account (emp_id, account_id) values (3, 4);
+insert into employee_account (emp_id, account_id) values (4, 5);
+insert into employee_account (emp_id, account_id) values (5, 6);
+insert into employee_account (emp_id, account_id) values (6, 7);
+insert into employee_account (emp_id, account_id) values (7, 8);
+insert into employee_account (emp_id, account_id) values (8, 9);
+insert into employee_account (emp_id, account_id) values (9, 10);
+insert into employee_account (emp_id, account_id) values (1, 13);
+insert into employee_account (emp_id, account_id) values (1, 14);
+insert into employee_account (emp_id, account_id) values (2, 15);
+insert into employee_account (emp_id, account_id) values (3, 16);
+insert into employee_account (emp_id, account_id) values (4, 17);
+insert into employee_account (emp_id, account_id) values (5, 18);
+insert into employee_account (emp_id, account_id) values (6, 22);
+insert into employee_account (emp_id, account_id) values (7, 23);
+insert into employee_account (emp_id, account_id) values (8, 25);
+insert into employee_account (emp_id, account_id) values (9, 26);
+insert into employee_account (emp_id, account_id) values (2, 27);
+insert into employee_account (emp_id, account_id) values (1, 28);
+insert into employee_account (emp_id, account_id) values (2, 33);
+insert into employee_account (emp_id, account_id) values (3, 34);
+insert into employee_account (emp_id, account_id) values (4, 35);
+insert into employee_account (emp_id, account_id) values (5, 36);
+insert into employee_account (emp_id, account_id) values (6, 37);
+insert into employee_account (emp_id, account_id) values (7, 38);
+insert into employee_account (emp_id, account_id) values (8, 39);
+insert into employee_account (emp_id, account_id) values (9, 40);
+insert into employee_account (emp_id, account_id) values (3, 41);
+insert into employee_account (emp_id, account_id) values (1, 42);
+insert into employee_account (emp_id, account_id) values (2, 43);
+insert into employee_account (emp_id, account_id) values (3, 44);
+insert into employee_account (emp_id, account_id) values (4, 45);
+insert into employee_account (emp_id, account_id) values (5, 46);
+insert into employee_account (emp_id, account_id) values (6, 47);
+insert into employee_account (emp_id, account_id) values (7, 49);
+
+
+
+
+---------- insert into task ----------
+
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Painting & Vinyl Wall Covering', 'Removal of Nonaut Sub from R Shoulder Jt, Open Approach', '10/22/2021', '1/18/2022', 'Pending', 1, 19, null, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Epoxy Flooring', 'Drainage of Common Bile Duct, Endo, Diagn', '2/13/2021', '5/9/2021', 'completed', 2, null, 8, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Asphalt Paving', 'Measurement of POC, Cardiac Rhythm, Extern Approach', '11/11/2021', '12/5/2021', 'in-working', 3, null, null, 2);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Sitework & Site Utilities', 'Release Left Foot Vein, Open Approach', '5/21/2022', '7/21/2022', 'pending', 4, null, null, 4);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Roofing (Metal)', 'Fusion Lum Jt w Synth Sub, Ant Appr A Col, Perc', '7/19/2021', '8/28/2021', 'completed', 5, 20, null, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Glass & Glazing', 'Bypass 3 Cor Art from Abd Art w Zooplastic, Perc Endo', '10/19/2021', '1/23/2022', 'in-working', 6, null, 10, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Masonry & Precast', 'LDR Brachytherapy of Urethra using Californium 252', '11/4/2021', '12/13/2021', 'in-working', 7, null, null, 7);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Roofing (Asphalt)', 'Extirpation of Matter from Greater Omentum, Perc Approach', '11/25/2021', '1/9/2021', 'in-working', 8, 25, null, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('EIFS', 'Drainage of Lower Jaw, Percutaneous Approach', '2/10/2021', '9/6/2021', 'completed', 9, 29, null, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Roofing (Metal)', 'Destruction of Right Humeral Head, Open Approach', '5/9/2021', '6/4/2021', 'completed', 1, null, null, 10);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Casework', 'Extirpation of Matter from R Face Vein, Perc Endo Approach', '3/8/2022', '4/25/2022', 'pending', 1, null, 13, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Casework', 'Excision of Right Eye, Open Approach', '12/18/2021', '1/4/2021', 'pending', 3, null, null, 18);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Wall Protection', 'Extirpation of Matter from L Sublingual Gland, Perc Approach', '9/1/2021', '12/20/2021', 'in-working', 2, null, 13, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Ornamental Railings', 'Plain Radiography of Oth Up Art using H Osm Contrast', '10/18/2021', '1/14/2022', 'in-working', 4, 65, null, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Glass & Glazing', 'Resection of Urethra, Open Approach', '2/13/2022', '3/23/2022', 'pending', 5, null, null, 15);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Ornamental Railings', 'Replace of L Metatarsotars Jt with Nonaut Sub, Open Approach', '3/9/2021', '5/7/2021', 'completed', 6, null, null, 16);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Landscaping & Irrigation', 'Destruction of Coccyx, Percutaneous Approach', '4/27/2021', '5/20/2021', 'completed', 7, 27, null, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Elevator', 'Supplement Head with Nonaut Sub, Perc Endo Approach', '12/20/2020', '8/17/2021', 'completed', 8, null, 22, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Ornamental Railings', 'Restriction of Hepatic Artery, Perc Endo Approach', '12/20/2021', '1/11/2022', 'pending', 9, 39, null, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Masonry & Precast', 'Restriction of Celiac Art with Extralum Dev, Perc Approach', '3/19/2022', '5/26/2022', 'pending', 2, null, 20, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Curb & Gutter', 'Introduce Monoclonal Antibody in Periph Vein, Open', '5/4/2022', '7/26/2022', 'pending', 1, null, null, 15);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Landscaping & Irrigation', 'Drainage of Head, Percutaneous Approach', '10/23/2021', '2/23/2022', 'in-working', 3, 22, null, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Asphalt Paving', 'Removal of Int Fix from L Tarsal, Perc Approach', '12/2/2021', '12/28/2021', 'in-working', 4, null, 44, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Doors, Frames & Hardware', 'Supplement Superior Vena Cava with Autol Sub, Open Approach', '9/30/2021', '1/8/2022', 'in-working', 5, null, null, 47);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Drilled Shafts', 'Occlusion Ileocecal Valve w Intralum Dev, Perc Endo', '5/23/2021', '11/28/2020', 'completed', 5, 50, null, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Doors, Frames & Hardware', 'Anatomical Regions, General, Creation', '7/21/2021', '11/10/2021', 'completed', 6, null, 26, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Doors, Frames & Hardware', 'Bypass L Axilla Art to L Up Leg Art w Synth Sub, Open', '4/2/2020', '10/14/2020', 'completed', 7, null, null, 27);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Waterproofing & Caulking', 'Excision of Right Lacrimal Duct, Endo, Diagn', '1/17/2022', '2/24/2022', 'pending', 8, 68, null, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Curb & Gutter', 'Release Cisterna Chyli, Open Approach', '10/22/2021', '3/4/2022', 'in-working', 9, null, 62, null);
+insert into tasks (task_name, task_description, assigned_date, due_date, status, emp_id, lead_id, opportunity_id, account_id) values ('Curb & Gutter', 'Release Lower Artery, Percutaneous Approach', '6/20/2021', '11/28/2020', 'completed', 7, null, null, 38);
+

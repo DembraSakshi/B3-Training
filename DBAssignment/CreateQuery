@@ -1,0 +1,140 @@
+-- Database: CRM
+
+-- DROP DATABASE "CRM";
+
+CREATE DATABASE "CRM"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+	
+
+
+CREATE TABLE country(
+	country_id SERIAL PRIMARY KEY,
+  	country_name VARCHAR(20) NOT NULL
+);
+
+
+
+create table address (
+		address_id serial primary key,
+		state varchar(20),
+		country_id int references country(country_id)
+);
+
+
+select * from address;
+
+
+
+CREATE TABLE users(
+	user_id serial PRIMARY KEY,
+	first_name VARCHAR(50) NOT NULL ,
+	last_name VARCHAR(50) NOT NULL ,		   
+	email VARCHAR(100) NOT NULL,
+   	reg_number BIGINT NOT NULL UNIQUE,
+   	gender CHAR(1) NOT NULL ,
+   	date_of_birth date ,
+   	address_line_1 VARCHAR(50) ,
+    address_line_2 VARCHAR(50) ,
+	contact_no_1 BIGINT NOT NULL,
+	contact_no_2 BIGINT,
+	created_at  date default now(),
+	is_deleted boolean, 
+	address_id int references address(address_id)
+);
+
+
+CREATE TABLE employees(
+
+	emp_id serial PRIMARY KEY,
+	designation varchar(20) NOT NULL,
+   	date_of_join date ,
+	user_id int references users(user_id)
+);
+select * from employees;
+
+
+CREATE TABLE leads(
+	lead_id SERIAL PRIMARY KEY,
+	referral VARCHAR(50) NOT NULL,
+	created_at date default now() ,
+	is_deleted boolean,
+	is_interested boolean,
+	user_id int references users(user_id) not null
+);
+alter table leads add constraint unique_user unique (user_id);
+
+
+CREATE TABLE opportunity(
+	opportunity_id SERIAL PRIMARY KEY,
+	description text,
+	created_at date default now(),
+	is_deleted boolean,
+	is_interested boolean,
+	lead_id int references leads(lead_id) not null
+); 
+alter table opportunity add constraint unique_lead_id unique (lead_id);
+
+
+CREATE TABLE account(
+	account_id SERIAL PRIMARY KEY,
+	account_name VARCHAR(20) NOT NULL,
+	created_at date default now(),
+	is_deleted boolean NOT NULL,
+	opportunity_id int references opportunity(opportunity_id) not null
+);
+alter table account add constraint unique_opp_id unique (opportunity_id);
+select * from account;
+
+
+
+CREATE TABLE plan (
+ 	plan_id SERIAL PRIMARY KEY,
+	planname VARCHAR(50) NOT NULL ,
+	plan_validity INT NOT NULL ,
+	plan_price INT NOT NULL	
+);
+select * from plan order by plan_id;
+
+
+CREATE TABLE account_plan (
+	ap_id SERIAL PRIMARY KEY,
+	start_date date default now(),
+	due_date Date,
+	account_id int references account(account_id),
+	plan_id int references plan(plan_id)	 
+);
+select * from account_plan;
+
+
+
+CREATE TABLE employee_account(
+	emp_acc_id SERIAL PRIMARY KEY,
+	emp_id int references employees(emp_id),
+	account_id int references account(account_id)
+);
+
+
+CREATE TABLE tasks(
+	task_id SERIAL PRIMARY KEY,
+	task_name VARCHAR(50) NOT NULL,
+	task_description text,
+	assigned_date date default now(),
+	due_date date,
+	status varchar(15) NOT NULL,
+	emp_id int references employees(emp_id) not null,
+	lead_id int references leads(lead_id),
+	opportunity_id int references opportunity(opportunity_id),
+	account_id int references account(account_id)
+);
+
+
+
+
+
+ 
